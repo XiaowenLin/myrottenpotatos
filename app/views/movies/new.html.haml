@@ -10,6 +10,6 @@
   = select :movie, :rating, ['G', 'PG', 'PG-13', 'R', 'NC-17']
 
   = label :movie, :release_date, 'Released On'
-  = text_field :movie, :release_date
-%br
+  = date_select :movie, :release_date
+  
   = submit_tag "Save Changes"

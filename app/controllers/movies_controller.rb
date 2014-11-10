@@ -10,5 +10,7 @@ class MoviesController < ApplicationController
     
   end
   def create
+    Movie.create!(params[:movie])
+    redirect_to 
   end
 end
