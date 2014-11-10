@@ -8,13 +8,15 @@
       %th Rating
       %th Relsease Date
       %th More Info
+      %th Destroy
   %tbody
     -@movies.each do |movie|
       %tr
-        %td= movie.title
+        %td= link_to "#{movie.title}", edit_movie_path(movie)
         %td= movie.rating
         %td= movie.release_date
         %td= link_to "More about #{movie.title}", movie_path(movie)
+        %th= button_to "Delete", movie_path(movie), :method => :delete, :confirm => "are you sure?"
 
 = link_to "Add a New Movie", new_movie_path
 -# debug(@movies)
