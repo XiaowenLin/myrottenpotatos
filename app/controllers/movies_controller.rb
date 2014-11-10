@@ -1,10 +1,12 @@
 class MoviesController < ApplicationController
   def index
-    #@movies = Movie.find(:all, :order => :title)
-    @movies = Movie.all
-    @movies = @movies.sort_by do |movie|
-      movie.title
-    end
+    @movies = Movie.find(:all, :order => :title)
+# @movies = Movie.all
+#@movies = @movies.sort_by do |movie|
+#      if movie
+#       movie.title
+#     end
+#   end
   end
   def show
     id = params[:id]
