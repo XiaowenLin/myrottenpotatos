@@ -67,3 +67,13 @@ flash {
   color: red
   text-align: center
 }
+div#banner {
+  height: 60px;
+  line-height: 60px;
+  vertical-align: middle;
+  background: yellow;
+  font-size: 36px;
+}
+div#banner a:link{
+  text-decoration: none;
+}
