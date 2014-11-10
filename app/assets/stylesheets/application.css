@@ -63,4 +63,7 @@ form label {
   color: maroon;
 }
 
-
+flash {
+  color: red
+  text-align: center
+}
