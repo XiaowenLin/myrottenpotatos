@@ -4,15 +4,17 @@
 %table#movies
   %thead
     %tr
+      %th #
       %th Movie Title
       %th Rating
       %th Relsease Date
       %th More Info
   %tbody
-    -@movies.each do |movie|
+    -@movies.each_with_index do |movie, index|
       %tr
+        %td= index
         %td
-          = link_to "#{movie.title}", edit_movie_path(movie)
+          = link_to "#{movie.title}", edit_movie_path(movie); 
           = button_to "Delete", movie_path(movie), :method => :delete, :confirm => "are you sure?"
         %td= movie.rating
         %td= movie.release_date
