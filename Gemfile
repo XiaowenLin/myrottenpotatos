@@ -46,3 +46,8 @@ end
 
 # To use debugger
 # gem 'debugger'
+
+# @author:saasbook
+# use omniauth
+gem 'omniauth'
+gem 'omniauth-twitter'
