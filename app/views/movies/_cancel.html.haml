@@ -1,0 +1,9 @@
+
+- my_path = movies_path
+- if @movie
+  - if @movie.new_record?
+    - my_path = movies_path
+  - else
+    - my_path = movie_path(@movie)
+
+= button_to 'Cancel', my_path, :method => :get
