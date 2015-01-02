@@ -64,8 +64,8 @@ form label {
 }
 
 flash {
-  color: red
-  text-align: center
+  color: red;
+  text-align: center;
 }
 div#banner {
   height: 60px;
