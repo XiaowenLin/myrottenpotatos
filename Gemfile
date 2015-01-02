@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.16'
-
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
@@ -26,8 +25,9 @@ group :assets do
 end
 
 gem 'jquery-rails'
-gem 'rails_12factor'
+gem 'rails_12factor', group: :production
 # To use ActiveModel has_secure_password
+
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
 # To use Jbuilder templates for JSON
@@ -56,3 +56,4 @@ end
 # use omniauth
 gem 'omniauth'
 gem 'omniauth-twitter'
+ruby '2.0.0'
