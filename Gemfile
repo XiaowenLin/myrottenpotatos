@@ -47,6 +47,8 @@ gem 'haml'
 # use Ruby debugger
 group :development, :test do
 	gem 'debugger'
+  gem 'rspec-rails'
+  gem 'autotest-rails'
 end
 
 # To use debugger
@@ -57,3 +59,5 @@ end
 gem 'omniauth'
 gem 'omniauth-twitter'
 ruby '2.0.0'
+gem 'jasmine'
+gem 'themoviedb'
