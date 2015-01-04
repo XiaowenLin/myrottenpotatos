@@ -10,12 +10,13 @@ class MoviesController < ApplicationController
   end
   def show
     id = params[:id]
-    begin
-      @movie = Movie.find(id)
-    rescue ActiveRecord::RecordNotFound
-      flash[:warning] = "Movie with id #{id} doesn't exist."
-      redirect_to movies_path
-    end
+#    begin
+    @movie = Movie.find(id)
+    render(:partial => 'movie_pop', :object => @movie) if request.xhr?
+#    rescue ActiveRecord::RecordNotFound
+#      flash[:warning] = "Movie with id #{id} doesn't exist."
+#      redirect_to movies_path
+#    end
   end
   def new
     @movie = Movie.new

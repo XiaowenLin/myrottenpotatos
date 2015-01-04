@@ -77,3 +77,9 @@ div#banner {
 div#banner a:link{
   text-decoration: none;
 }
+#movieInfo {
+  padding: 2ex;
+  position: absolute;
+  border: 2px double grey;
+  background: wheat;
+}
