@@ -4,13 +4,20 @@
 %table#movies
   %thead
     %tr
-      %th #
+      %th # in TMDB
       %th Movie Title
       %th Rating
       %th Relsease Date
       %th More Info
   %tbody
-    = render :partial => 'movie', :collection => @movies
+    - @movies.each do |movie|
+      %tr{:class => ('adult' if movie.adult == true)}
+        %td= movie.id
+        %td= movie.original_title
+        %td= movie.popularity
+        %td= movie.release_date
+        %td= #link_to "More about #{movie.title}", movie_path(movie)
+
 = link_to "Add a New Movie", new_movie_path
 
 -# add to end of app/views/movies/index.html.haml:

@@ -8,6 +8,20 @@ class Movie < ActiveRecord::Base
   validate :released_1930_or_later # uses custom validator below
   validates :rating, :inclusion => {:in => Movie.all_ratings},
     :unless => :grandfathered?
+  class Movie::InvalidKeyError < StandardError ; end
+ 
+  def self.find_in_tmdb(string)
+    begin
+      Tmdb::Api.key("833c99fbde3aef0813a5ae61e427c0e8")
+      Tmdb::Movie.find(string)
+    rescue NoMethodError => tmdb_gem_exception
+      if Tmdb::Api.response['code'] == 401
+        raise Movie::InvalidKeyError, 'Invalid API key'
+      else
+        raise tmdb_gem_exception
+      end
+    end
+  end
   def released_1930_or_later
     errors.add(:release_date, 'must be 1930 or later') if
       release_date && release_date < Date.parse('1 Jan 1930')
